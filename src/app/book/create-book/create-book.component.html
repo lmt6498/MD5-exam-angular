@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Create Book</h1>
+  <form [formGroup]="bookForm">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" formControlName="title" placeholder="Enter title" id="title">
+      <span *ngIf="!bookForm.get('title')?.valid && bookForm.get('title')?.touched"
+            style="color: red">Tiêu đề ít nhất 6 ký tự</span>
+    </div>
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input type="text" class="form-control" formControlName="author" placeholder="Enter author" id="author">
+      <span *ngIf="!bookForm.get('author')?.valid && bookForm.get('author')?.touched"
+            style="color: red">Tên tác giả ít nhất 6 ký tự</span>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" formControlName="description" placeholder="Enter description" id="description">
+      <span *ngIf="!bookForm.get('description')?.valid && bookForm.get('description')?.touched"
+            style="color: red">Mô tả ít nhất 10 ký tự</span>
+    </div>
+    <button type="submit" (click)="create()"
+            [disabled]="bookForm.invalid" class="btn btn-primary" >Submit</button>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <form [formGroup]="bookForm">
+    <h1>Chi tiết sách</h1>
+    <p align="right"><button type="button" class="btn btn-success" routerLink="/book">
+      Xem danh sách
+    </button></p>
+    <h2>Tên sách: {{bookForm.get('title')?.value}}</h2>
+    <h2>Tác giả: {{bookForm.get('author')?.value}}</h2>
+    <h2>Mô tả: </h2>
+    <h3>{{bookForm.get('description')?.value}}</h3>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Danh sách các cuốn sách</h2>
+  <p align="right"><button type="button" class="btn btn-success" routerLink="/book/create">
+    Thêm sách mới
+  </button></p>
+  <h3>Có {{books.length}} cuốn sách</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Description</th>
+      <th colspan="2" style="text-align: center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of books">
+      <td>{{b.id}}</td>
+      <td><a [routerLink]="['/book/detail',b.id]">{{b.title}}</a></td>
+      <td>{{b.author}}</td>
+      <td>{{b.description}}</td>
+      <td>
+        <button type="button"  class="btn btn-success" [routerLink]="['/book/edit',b.id]">
+          Sửa
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteBook(b.id)">Xoá</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
