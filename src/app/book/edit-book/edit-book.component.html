@@ -20,7 +20,10 @@
             style="color: red">Mô tả ít nhất 10 ký tự</span>
     </div>
     <button type="submit" (click)="edit(id)"
-            [disabled]="bookForm.invalid" class="btn btn-primary" >Submit</button>
+            [disabled]="bookForm.invalid" class="btn btn-primary" >Cập nhật</button>
+    <button type="button" class="btn btn-success" routerLink="/book">
+      Thoát
+    </button>
   </form>
 </div>
 
