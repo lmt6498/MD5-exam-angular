@@ -26,7 +26,9 @@
         </button>
       </td>
       <td>
-        <button type="button" class="btn btn-danger" (click)="deleteBook(b.id)">Xoá</button>
+        <button type="button"  class="btn btn-success" [routerLink]="['/book/delete',b.id]">
+          Xoá
+        </button>
       </td>
     </tr>
     </tbody>

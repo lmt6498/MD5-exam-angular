@@ -29,10 +29,5 @@ export class BookComponent implements OnInit {
       this.books = data;
     })
   }
-  deleteBook(id:number){
-    this.http.delete(`http://localhost:3000/books/${id}`).subscribe((data)=>{
-      alert("Xoá thành công!");
-      this.router.navigate(['/book'])
-    })
-  }
+
 }
